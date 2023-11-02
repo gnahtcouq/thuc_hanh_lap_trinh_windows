@@ -1,0 +1,8 @@
+- 2 tuần nữa thi gk
+- SV tự chuẩn bị laptop
+- Được sử dụng tài liệu
+
+Nội dung: tạo trang web với chức năng
++ Thêm, xoá, sửa
++ Validation (Ràng buộc dữ liệu)
++ Giao diện giống với đề bài

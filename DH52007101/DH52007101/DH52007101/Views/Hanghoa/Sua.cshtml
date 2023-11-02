@@ -1,0 +1,88 @@
+﻿@model DH52007101.Models.Hanghoa
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sửa thông tin nhà sản xuất</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="sua" method="post">
+            <div class="form-horizontal">
+                <h2>Sửa thông tin hàng hóa</h2>
+                @{
+                    Hanghoa n = ViewBag.hh;
+                }
+                <div class="form-group">
+                    @*name trùng với tên field được binding*@
+                    <input name="mahang" type="hidden" value="@n.Mahang" maxlength="50" /><br />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Tenhang" class="form-label"></label>
+                    <input asp-for="Tenhang" class="form-control" />
+                    <span asp-validation-for="Tenhang" class="text-danger"></span><br />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Donvitinh" class="form-label"></label>
+                    <input asp-for="Donvitinh" class="form-control" />
+                    <span asp-validation-for="Donvitinh" class="text-danger"></span><br />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Dongia" class="form-label"></label>
+                    <input asp-for="Dongia" class="form-control" />
+                    <span asp-validation-for="Dongia" class="text-danger"></span><br />
+                </div>
+
+                <div class="form-group">
+                    @*<select name="maloai">
+                            @{
+                                foreach (var item in ViewBag.lhh) {
+                                    @if (item.Maloai == n.Maloai) {
+                                        <option value="@item.Maloai" selected>@item.Maloai</option>} else {
+                                        <option value="@item.Maloai">@item.Maloai</option>}
+                                }
+                            }
+                        </select>*@
+                    <label for="Maloai" class="form-label"><b>Mã loại</b></label>
+                    <select asp-for="Maloai" asp-items="ViewBag.lhh" class="form-control"></select>
+                </div>
+
+                <div class="form-group">
+                    @*<b>Mã nhà sản xuất</b><br />
+                        <select name="mansx">
+                            @{
+                                foreach (var item in ViewBag.nsx) {
+                                    @if (item.Mansx == n.Mansx) {
+                                        <option value="@item.Mansx" selected>@item.Mansx</option>} else {
+                                        <option value="@item.Mansx">@item.Mansx</option>}
+                                }
+                            }
+                        </select>*@
+                    <label for="Mansx" class="form-label"><b>Mã nhà sản xuất</b></label>
+                    <select asp-for="Mansx" asp-items="ViewBag.nsx" class="form-control"></select>
+
+                </div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Lưu</button><br /><br />
+                </div>
+
+                <div>
+                    <a href="@Url.Action("Index")">Quay lại</a>
+                </div>
+            </div>
+        </form>
+</body>
+</html>

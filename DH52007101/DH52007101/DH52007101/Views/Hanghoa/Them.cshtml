@@ -1,0 +1,67 @@
+﻿@model DH52007101.Models.Hanghoa
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thêm hàng hoá</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="Them" method="post">
+            <h2>Thêm hàng hoá</h2>
+            <div class="form-group">
+                <label asp-for="Mahang" class="form-label"></label>
+                <input asp-for="Mahang" class="form-control" />
+                <span asp-validation-for="Mahang" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tenhang" class="form-label"></label>
+                <input asp-for="Tenhang" class="form-control" />
+                <span asp-validation-for="Tenhang" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Donvitinh" class="form-label"></label>
+                <input asp-for="Donvitinh" class="form-control" />
+                <span asp-validation-for="Donvitinh" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dongia" class="form-label"></label>
+                <input asp-for="Dongia" class="form-control" />
+                <span asp-validation-for="Dongia" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label for="Maloai" class="form-label"><b>Mã loại</b></label>
+                <select asp-for="Maloai" asp-items="ViewBag.lhh" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="Mansx" class="form-label"><b>Mã nhà sản xuất</b></label>
+                <select asp-for="Mansx" asp-items="ViewBag.nsx" class="form-control"></select>
+            </div>
+
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Lưu</button><br /><br />
+            </div>
+
+            <div>
+                <a asp-action="Index">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
