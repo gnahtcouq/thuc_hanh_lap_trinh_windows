@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using DH52007101.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace DH52007101.Controllers {
     public class KhachhangController : Controller {
@@ -78,5 +80,21 @@ namespace DH52007101.Controllers {
             db.SaveChanges();
             return RedirectToAction("index");
         }
+
+        // Đăng nhập
+        public IActionResult DangNhap(Khachhang kh) {
+            ViewBag.loginCheck = false;
+            Khachhang k = db.Khachhang.Find(kh.Makh);
+            if (k != null) {
+                if (k.Password == kh.Password) {
+                    string json = JsonConvert.SerializeObject(k);
+                    HttpContext.Session.SetString("Khachhang", json);
+                    ViewBag.loginCheck = true;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return View();
+        }
+        // Đăng xuất
     }
 }

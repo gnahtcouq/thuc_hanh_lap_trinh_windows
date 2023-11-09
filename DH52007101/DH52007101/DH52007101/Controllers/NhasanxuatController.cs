@@ -6,6 +6,10 @@ using DH52007101.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+// Trang nào cần dùng Session thì thêm 2 namespace
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json; // chuyển 1 string -> đối tượng và đối tượng -> string
+
 namespace DH52007101.Controllers {
     public class NhasanxuatController : Controller {
         QLBHContext db = new QLBHContext();

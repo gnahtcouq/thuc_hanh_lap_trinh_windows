@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         @{
-            if (ViewBag.flagDelete = true) {
+            if (ViewBag.flagDelete == true) {
                 <h2>Xóa thông tin nhà sản xuất</h2>
                 <h3>Bạn muốn xóa nhà sản xuất này?</h3>
             } else {
@@ -54,7 +54,7 @@
             </div>
 
             @{
-                if (ViewBag.deleteFlag == true) {
+                if (ViewBag.flagDelete == true) {
                     <div class="form-group">
                         <input type="submit" value="Xóa" class="btn btn-primary" /><br /><br />
                     </div>

@@ -25,6 +25,15 @@ namespace DH52007101 {
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Đăng ký dịch vụ lưu cache trong bộ nhớ (Session sẽ sử dụng nó)
+            services.AddDistributedMemoryCache();
+            // Đăng ký dịch vụ Session
+            services.AddSession(cfg => {
+                // Đặt tên Session - tên này sử dụng ở Browser (Cookie)
+                cfg.Cookie.Name = "QLBH";
+                // Thời gian tồn tại của Session
+                cfg.IdleTimeout = new TimeSpan(0, 60, 0);
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -39,6 +48,7 @@ namespace DH52007101 {
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession(); // sử dụng Session
 
             app.UseMvc(routes => {
                 routes.MapRoute(
