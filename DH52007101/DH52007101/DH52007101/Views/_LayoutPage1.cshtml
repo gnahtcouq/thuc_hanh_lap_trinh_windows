@@ -1,7 +1,5 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
 
 <!DOCTYPE html>
 
@@ -25,42 +23,61 @@
                         <div class="nav nav-tabs">
                             <div class="nav-item bg-primary">
                                 <div class="nav-link">
-                                    <a href="@Url.Action("Index","Home")"
-                                       class="text-white">Trang chủ</a>
+
+                                    @*<a href="@Url.Action("index","Home")" class="text-white">Trang chủ</a>*@
+                                    <a asp-controller="Home" asp-action="Index" class="text-white">Trang chủ</a>
                                 </div>
                             </div>
                             <div class="nav-item bg-primary">
                                 <div class="nav-link">
-                                    @Html.ActionLink("Trang chủ", "Index",
-                                   "Home", null, new { @class = "text-white" })
+                                    @*@Html.ActionLink("Trang chủ", "index", "Home", null, new { @class = "text-white" })*@
+                                    <a asp-controller="Home" asp-action="Index" class="text-white">Trang chủ</a>
                                 </div>
                             </div>
                             <div class="nav-item bg-primary">
                                 <div class="nav-link">
-                                    @Html.ActionLink("Trang chủ", "Index",
-                                   "Home", null, new { @class = "text-white" })
+                                    @*@Html.ActionLink("Trang chủ", "index", "Home", null, new { @class = "text-white" })*@
+                                    <a asp-controller="Home" asp-action="Index" class="text-white">Trang chủ</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-4">
                         <div class="nav nav-tabs float-right">
                             <div class="nav-item bg-primary">
                                 <div class="nav-link">
-                                    @Html.ActionLink("Trang chủ", "Index",
-                                   "Home", null, new { @class = "text-white" })
+                                    @*@Html.ActionLink("Trang chủ", "index", "Home", null, new { @class = "text-white" })*@
+                                    <a asp-controller="Home" asp-action="Index" class="text-white">Trang chủ</a>
                                 </div>
+
                             </div>
+                            @{
+                                var session = Context.Session.GetString("Khachhang");
+                                if (session != null) {
+                                    <div class="nav-item bg-success">
+                                        <div class="nav-link">
+                                            <a asp-controller="Khachhang" asp-action="DangXuat" class="text-white">Đăng xuất</a>
+                                        </div>
+                                    </div>
+                                } else {
+                                    <div class="nav-item bg-danger">
+                                        <div class="nav-link">
+                                            <a asp-controller="Khachhang" asp-action="DangNhap" class="text-white">Đăng nhập</a>
+                                        </div>
+                                    </div>
+                                }
+                            }
                             <div class="nav-item bg-primary">
                                 <div class="nav-link">
-                                    @Html.ActionLink("Đăng nhập", "Index",
-                                   "Home", null, new { @class = "text-white" })
-                                </div>
-                            </div>
-                            <div class="nav-item bg-primary">
-                                <div class="nav-link">
-                                    @Html.ActionLink("Trang chủ", "Index",
-                                   "Home", null, new { @class = "text-white" })
+                                    @{
+                                        if (session == null) {
+                                            <a asp-controller="Khachhang" asp-action="DangKy" class="text-white">Đăng ký</a>
+                                        } else {
+                                            Khachhang kh = JsonConvert.DeserializeObject<Khachhang>(session);
+                                            <a asp-controller="Khachhang" asp-action="Sua" asp-route-id="@kh.Makh" class="text-white">@kh.Tenkh</a>
+                                        }
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -69,16 +86,31 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-3">
-                        <div class="nav flex-column">
-                            <a class="nav-link bg-info text-dark rounded border border-light" href="Nhasanxuat">Quản lý Nhà sản xuất</a>
-                            <a class="nav-link bg-info text-dark rounded border border-light" href="Nhanvien">Quản lý Nhân viên</a>
-                            <a class="nav-link bg-info text-dark rounded border border-light" href="Khachhang">Quản lý Khách hàng</a>
-                            <a class="nav-link bg-info text-dark rounded border border-light" href="Loaihanghoa">Quản lý Loại hàng hoá</a>
-                            <a class="nav-link bg-info text-dark rounded border border-light" href="Hanghoa">Quản lí Hàng hoá</a>
+                    <div class="col-md-3">
+                        <div class="list-group">
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","nhasanxuat")" class="text-white">Quản lý Nhà sản xuất</a>*@
+                                <a asp-controller="nhasanxuat" asp-action="Index" class="text-white">Quản lý Nhà sản xuất</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","nhanvien")" class="text-white">Quản lý Nhân viên</a>*@
+                                <a asp-controller="nhanvien" asp-action="Index" class="text-white">Quản lý Nhân viên</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","khachhang")" class="text-white">Quản lý Khách hàng</a>*@
+                                <a asp-controller="khachhang" asp-action="Index" class="text-white">Quản lý Khách hàng</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","loaihanghoa")" class="text-white">Quản lý Loại hàng hóa</a>*@
+                                <a asp-controller="loaihanghoa" asp-action="Index" class="text-white">Quản lý Loại hàng hóa</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","hanghoa")" class="text-white">Quản lý Hàng hóa</a>*@
+                                <a asp-controller="hanghoa" asp-action="Index" class="text-white">Quản lý Hàng hóa</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-md-9 bg-light">
                         @RenderBody()
                     </div>
                 </div>
@@ -88,5 +120,8 @@
             </div>
         </div>
     </div>
+
+    @*@RenderSection("Scripts", required: false)*@
 </body>
 </html>
+

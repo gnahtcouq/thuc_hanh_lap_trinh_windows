@@ -1,0 +1,51 @@
+﻿@model DH52007101.Models.Khachhang
+
+@{
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng nhập</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="DangNhap" method="post">
+            <h2>Đăng nhập</h2>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label asp-for="Makh" class="form-label">Mã khách hàng</label>
+                    <input asp-for="Makh" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="form-label">Mật khẩu</label>
+                    <input asp-for="Password" class="form-control" />
+                </div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button><br /><br />
+                </div>
+            </div>
+        </form>
+
+        <div>
+            @{
+                if (ViewBag.loginCheck != null && ViewBag.loginCheck == false) {
+                    <div class="font-weight-bold text-danger">
+                        Mã khách hàng hoặc mật khẩu sai!
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+</body>
+</html>

@@ -82,6 +82,11 @@ namespace DH52007101.Controllers {
         }
 
         // Đăng nhập
+        public IActionResult DangNhap() {
+            ViewBag.loginCheck = null;
+            return View();
+        }
+        [HttpPost]
         public IActionResult DangNhap(Khachhang kh) {
             ViewBag.loginCheck = false;
             Khachhang k = db.Khachhang.Find(kh.Makh);
@@ -96,5 +101,9 @@ namespace DH52007101.Controllers {
             return View();
         }
         // Đăng xuất
+        public IActionResult DangXuat(Khachhang kh) {
+            HttpContext.Session.Remove("Khachhang");
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
