@@ -22,9 +22,15 @@ namespace DH52007101.Controllers {
         [HttpPost]
         public ActionResult them(Nhanvien n) {
             if (ModelState.IsValid) {
-                db.Nhanvien.Add(n);
-                db.SaveChanges();
-                return RedirectToAction("index");
+                if (db.Nhanvien.Find(n.Manv) != null) {
+                    //ModelState.AddModelError("Manv", "Mã nhân viên bị trùng"); // cấp property
+                    ModelState.AddModelError("", "Mã nhân viên bị trùng!"); // cấp model
+                    return View(n);
+                } else {
+                    db.Nhanvien.Add(n);
+                    db.SaveChanges();
+                    return RedirectToAction("index");
+                }
             } else
                 return View(n);
         }

@@ -1,7 +1,7 @@
 ﻿@model DH52007101.Models.Nhasanxuat
 
 @{
-    Layout = null;
+    Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
 <!DOCTYPE html>
@@ -18,6 +18,11 @@
     <div class="container">
         <form asp-action="Them" method="post">
             <h2>Thêm nhà sản xuất</h2>
+            <div class="form-group">
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                    <span>Các lỗi cần khắc phục: </span>
+                </div>
+            </div>
             <div class="form-group">
                 <label asp-for="Mansx" class="form-label"></label>
                 <input asp-for="Mansx" class="form-control" />

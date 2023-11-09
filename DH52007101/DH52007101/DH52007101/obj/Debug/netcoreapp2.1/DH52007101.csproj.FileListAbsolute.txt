@@ -96,3 +96,4 @@ C:\Users\QuocThang\Documents\GitHub\thuc_hanh_lap_trinh_windows\DH52007101\DH520
 C:\Users\QuocThang\Documents\GitHub\thuc_hanh_lap_trinh_windows\DH52007101\DH52007101\DH52007101\obj\Debug\netcoreapp2.1\Razor\Views\Nhanvien\Them.g.cshtml.cs
 C:\Users\QuocThang\Documents\GitHub\thuc_hanh_lap_trinh_windows\DH52007101\DH52007101\DH52007101\obj\Debug\netcoreapp2.1\Razor\Views\Nhanvien\Sua.g.cshtml.cs
 C:\Users\QuocThang\Documents\GitHub\thuc_hanh_lap_trinh_windows\DH52007101\DH52007101\DH52007101\obj\Debug\netcoreapp2.1\Razor\Views\Nhanvien\Xoa.g.cshtml.cs
+C:\Users\QuocThang\Documents\GitHub\thuc_hanh_lap_trinh_windows\DH52007101\DH52007101\DH52007101\obj\Debug\netcoreapp2.1\Razor\Views\_LayoutPage1.g.cshtml.cs

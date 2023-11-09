@@ -43,7 +43,7 @@ namespace DH52007101 {
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Nhanvien}/{action=Index}/{id?}");
+                    template: "{controller=Nhasanxuat}/{action=Index}/{id?}");
             });
         }
     }

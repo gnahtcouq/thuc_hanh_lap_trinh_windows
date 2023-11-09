@@ -10,6 +10,7 @@ namespace DH52007101.Models {
         }
         [DisplayName("Mã nhân viên")]
         [Required(ErrorMessage = "Mã nhân viên không được để trống!")]
+        [StringLength(maximumLength: 10, MinimumLength = 2, ErrorMessage = "Mã nhân viên phải nhập đủ 2 ký tự")]
         public string Manv { get; set; }
         [DisplayName("Tên nhân viên")]
         [Required(ErrorMessage = "Tên nhân viên không được để trống!")]

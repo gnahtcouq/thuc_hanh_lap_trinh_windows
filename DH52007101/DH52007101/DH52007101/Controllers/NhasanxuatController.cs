@@ -22,9 +22,15 @@ namespace DH52007101.Controllers {
         [HttpPost]
         public ActionResult them(Nhasanxuat n) {
             if (ModelState.IsValid) {
-                db.Nhasanxuat.Add(n);
-                db.SaveChanges();
-                return RedirectToAction("index");
+                if (db.Nhasanxuat.Find(n.Mansx) != null) {
+                    //ModelState.AddModelError("Mansx", "Mã nhà sản xuất bị trùng"); // cấp property
+                    ModelState.AddModelError("", "Mã nhà sản xuất bị trùng!"); // cấp model
+                    return View(n);
+                } else {
+                    db.Nhasanxuat.Add(n);
+                    db.SaveChanges();
+                    return RedirectToAction("index");
+                }
             } else
                 return View(n);
         }
@@ -55,13 +61,13 @@ namespace DH52007101.Controllers {
 
         //Xóa
         public ActionResult xoa(string id) {
-            if (id == null) {
-                return new BadRequestResult();
-            }
+            var a = db.Hanghoa.Where(k => k.Mansx == id).ToList().Count;
+            if (a <= 0)
+                ViewBag.flagDelete = true;
+            else
+                ViewBag.flagDelete = false;
+
             Nhasanxuat n = db.Nhasanxuat.Find(id);
-            if (n == null) {
-                return NotFound();
-            }
             ViewBag.nsx = n;
             return View(n);
         }
