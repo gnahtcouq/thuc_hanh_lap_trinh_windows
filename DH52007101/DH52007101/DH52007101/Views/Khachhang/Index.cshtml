@@ -52,7 +52,7 @@
                         <td>@item.Password</td>
                         <td>
                             @*<a href="@Url.Action("sua","Khachhang",new { id = item.Makh })">Sửa</a>*@
-                            <a asp-action="sua" asp-route-id="@item.Makh" class="btn btn-success">Sửa</a> |
+                            <a asp-action="sua" asp-route-id="@item.Makh" class="btn btn-success">Sửa</a>
                             @*<a href="@Url.Action("xoa","Khachhang",new { id = item.Makh })">Xóa</a>*@
                             <a asp-action="xoa" asp-route-id="@item.Makh" class="btn btn-danger">Xóa</a>
                         </td>

@@ -16,8 +16,14 @@
 </head>
 <body>
     <div class="container">
-        <h2>Xóa thông tin loại hàng hoá</h2>
-        <h3>Bạn muốn xóa loại hàng hoá này ?</h3>
+        @{
+            if (ViewBag.flagDelete == true) {
+                <h2>Xóa thông tin loại hàng hoá</h2>
+                <h3>Bạn muốn xóa loại hàng hoá này?</h3>
+            } else {
+                <h3>Bạn không thể xóa loại hàng hoá này</h3>
+            }
+        }
         <form method="post">
             <div class="form-group">
                 <table class="table">
@@ -37,9 +43,13 @@
                 </table>
             </div>
 
-            <div class="form-group">
-                <input type="submit" value="Xóa" class="btn btn-primary" /><br /><br />
-            </div>
+            @{
+                if (ViewBag.flagDelete == true) {
+                    <div class="form-group">
+                        <input type="submit" value="Xóa" class="btn btn-primary" /><br /><br />
+                    </div>
+                }
+            }
 
             <div>
                 <a asp-action="Index">Quay lại</a>

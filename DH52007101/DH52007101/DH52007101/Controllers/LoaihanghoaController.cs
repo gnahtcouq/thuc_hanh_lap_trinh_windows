@@ -51,13 +51,23 @@ namespace DH52007101.Controllers {
 
         //Xóa
         public ActionResult xoa(string id) {
-            if (id == null) {
-                return new BadRequestResult();
-            }
+            //if (id == null) {
+            //    return new BadRequestResult();
+            //}
+            //Loaihanghoa n = db.Loaihanghoa.Find(id);
+            //if (n == null) {
+            //    return NotFound();
+            //}
+            //ViewBag.lhh = n;
+            //return View(n);
+
+            var a = db.Hanghoa.Where(k => k.Maloai == id).ToList().Count;
+            if (a <= 0)
+                ViewBag.flagDelete = true;
+            else
+                ViewBag.flagDelete = false;
+
             Loaihanghoa n = db.Loaihanghoa.Find(id);
-            if (n == null) {
-                return NotFound();
-            }
             ViewBag.lhh = n;
             return View(n);
         }

@@ -27,8 +27,8 @@ namespace DH52007101.Controllers {
         public ActionResult them(Nhasanxuat n) {
             if (ModelState.IsValid) {
                 if (db.Nhasanxuat.Find(n.Mansx) != null) {
-                    //ModelState.AddModelError("Mansx", "Mã nhà sản xuất bị trùng"); // cấp property
-                    ModelState.AddModelError("", "Mã nhà sản xuất bị trùng!"); // cấp model
+                    ModelState.AddModelError("Mansx", "Mã nhà sản xuất bị trùng"); // cấp property
+                    //ModelState.AddModelError("", "Mã nhà sản xuất bị trùng!"); // cấp model
                     return View(n);
                 } else {
                     db.Nhasanxuat.Add(n);

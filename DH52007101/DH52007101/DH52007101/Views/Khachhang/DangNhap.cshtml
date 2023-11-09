@@ -30,21 +30,23 @@
                     <input asp-for="Password" class="form-control" />
                 </div>
 
+                <div>
+                    @{
+                        if (ViewBag.loginCheck != null && ViewBag.loginCheck == false) {
+                            <div class="font-weight-bold text-danger">
+                                Mã khách hàng hoặc mật khẩu sai!
+                            </div>
+                        }
+                    }
+                </div>
+
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary">Đăng nhập</button><br /><br />
                 </div>
             </div>
         </form>
 
-        <div>
-            @{
-                if (ViewBag.loginCheck != null && ViewBag.loginCheck == false) {
-                    <div class="font-weight-bold text-danger">
-                        Mã khách hàng hoặc mật khẩu sai!
-                    </div>
-                }
-            }
-        </div>
+
 
     </div>
 </body>

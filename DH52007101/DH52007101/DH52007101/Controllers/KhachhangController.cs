@@ -95,7 +95,7 @@ namespace DH52007101.Controllers {
                     string json = JsonConvert.SerializeObject(k);
                     HttpContext.Session.SetString("Khachhang", json);
                     ViewBag.loginCheck = true;
-                    return RedirectToAction("Index", "Home");
+                    //return RedirectToAction("Index", "Home");
                 }
             }
             return View();
