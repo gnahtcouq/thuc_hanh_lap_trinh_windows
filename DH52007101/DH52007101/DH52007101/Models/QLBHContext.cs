@@ -2,17 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace DH52007101.Models
-{
-    public partial class QLBHContext : DbContext
-    {
-        public QLBHContext()
-        {
+namespace DH52007101.Models {
+    public partial class QLBHContext : DbContext {
+        public QLBHContext() {
         }
 
         public QLBHContext(DbContextOptions<QLBHContext> options)
-            : base(options)
-        {
+            : base(options) {
         }
 
         public virtual DbSet<Chitietphieudathang> Chitietphieudathang { get; set; }
@@ -25,19 +21,15 @@ namespace DH52007101.Models
         public virtual DbSet<Phieudathang> Phieudathang { get; set; }
         public virtual DbSet<Phieugiaohang> Phieugiaohang { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+            if (!optionsBuilder.IsConfigured) {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=localhost;Database=QLBH;Trusted_Connection=True;");
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Chitietphieudathang>(entity =>
-            {
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.Entity<Chitietphieudathang>(entity => {
                 entity.HasKey(e => new { e.Mapdh, e.Mahang });
 
                 entity.ToTable("chitietphieudathang");
@@ -67,8 +59,7 @@ namespace DH52007101.Models
                     .HasConstraintName("FK_chitietphieudathang_phieudathang");
             });
 
-            modelBuilder.Entity<Chitietphieugiaohang>(entity =>
-            {
+            modelBuilder.Entity<Chitietphieugiaohang>(entity => {
                 entity.HasKey(e => new { e.Mapgh, e.Mahang });
 
                 entity.ToTable("chitietphieugiaohang");
@@ -100,8 +91,7 @@ namespace DH52007101.Models
                     .HasConstraintName("FK_chitietphieugiaohang_phieugiaohang");
             });
 
-            modelBuilder.Entity<Hanghoa>(entity =>
-            {
+            modelBuilder.Entity<Hanghoa>(entity => {
                 entity.HasKey(e => e.Mahang);
 
                 entity.ToTable("hanghoa");
@@ -144,8 +134,7 @@ namespace DH52007101.Models
                     .HasConstraintName("FK_hanghoa_nhasanxuat");
             });
 
-            modelBuilder.Entity<Khachhang>(entity =>
-            {
+            modelBuilder.Entity<Khachhang>(entity => {
                 entity.HasKey(e => e.Makh);
 
                 entity.ToTable("khachhang");
@@ -176,8 +165,7 @@ namespace DH52007101.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Loaihanghoa>(entity =>
-            {
+            modelBuilder.Entity<Loaihanghoa>(entity => {
                 entity.HasKey(e => e.Maloai);
 
                 entity.ToTable("loaihanghoa");
@@ -192,8 +180,7 @@ namespace DH52007101.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Nhanvien>(entity =>
-            {
+            modelBuilder.Entity<Nhanvien>(entity => {
                 entity.HasKey(e => e.Manv);
 
                 entity.ToTable("nhanvien");
@@ -222,8 +209,7 @@ namespace DH52007101.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Nhasanxuat>(entity =>
-            {
+            modelBuilder.Entity<Nhasanxuat>(entity => {
                 entity.HasKey(e => e.Mansx);
 
                 entity.ToTable("nhasanxuat");
@@ -242,8 +228,7 @@ namespace DH52007101.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Phieudathang>(entity =>
-            {
+            modelBuilder.Entity<Phieudathang>(entity => {
                 entity.HasKey(e => e.Mapdh);
 
                 entity.ToTable("phieudathang");
@@ -275,8 +260,7 @@ namespace DH52007101.Models
                     .HasConstraintName("FK_phieudathang_khachhang");
             });
 
-            modelBuilder.Entity<Phieugiaohang>(entity =>
-            {
+            modelBuilder.Entity<Phieugiaohang>(entity => {
                 entity.HasKey(e => e.Mapgh);
 
                 entity.ToTable("phieugiaohang");

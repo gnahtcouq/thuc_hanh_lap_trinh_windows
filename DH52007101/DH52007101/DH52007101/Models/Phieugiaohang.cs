@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DH52007101.Models
-{
-    public partial class Phieugiaohang
-    {
-        public Phieugiaohang()
-        {
+namespace DH52007101.Models {
+    public partial class Phieugiaohang {
+        public Phieugiaohang() {
             Chitietphieugiaohang = new HashSet<Chitietphieugiaohang>();
         }
 

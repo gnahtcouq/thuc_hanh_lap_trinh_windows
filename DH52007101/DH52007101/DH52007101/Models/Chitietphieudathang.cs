@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DH52007101.Models
-{
-    public partial class Chitietphieudathang
-    {
+namespace DH52007101.Models {
+    public partial class Chitietphieudathang {
         public string Mapdh { get; set; }
         public string Mahang { get; set; }
         public double? Dongia { get; set; }
