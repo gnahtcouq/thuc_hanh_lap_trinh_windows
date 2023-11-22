@@ -70,7 +70,7 @@ using DH52007101.Models;
             WriteLiteral("\r\n<html>\r\n");
             EndContext();
             BeginContext(98, 409, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3d7c6c026e34d5b8cc8ab45c40484fa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7b8a27db5a34740adb29ed822526628", async() => {
                 BeginContext(104, 396, true);
                 WriteLiteral(@"
     <meta name=""viewport"" content=""width=device-width"" />
@@ -97,12 +97,12 @@ using DH52007101.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(509, 1054, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d65d4fba63aa4e70a23c192e8e220200", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b99a8e22f8944992a9ce3ef44e447d48", async() => {
                 BeginContext(515, 126, true);
                 WriteLiteral("\r\n    <div class=\"container\">\r\n        <h2>Xóa thông tin hàng hóa</h2>\r\n        <h3>Bạn muốn xóa hàng hóa này ?</h3>\r\n        ");
                 EndContext();
                 BeginContext(641, 901, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e4d458ee1124fecbf1d9a204f79dc2e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65d886162c2f4be79876922de124e1bb", async() => {
                     BeginContext(661, 205, true);
                     WriteLiteral("\r\n            <div class=\"form-group\">\r\n                <table class=\"table\">\r\n                    <tr>\r\n                        <th>Tên hàng hóa</th>\r\n                    </tr>\r\n                    <tr>\r\n");
                     EndContext();
@@ -127,7 +127,7 @@ WriteAttributeValue("", 1074, n.Mahang, 1074, 9, false);
                     WriteLiteral(" />\r\n                            ");
                     EndContext();
                     BeginContext(1117, 62, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16727c18c88942dd95359f0e81d2dfa3", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b71ed8980abd41b4a32efda0fcb3c431", async() => {
                         BeginContext(1162, 9, false);
 #line 32 "C:\Users\QuocThang\Documents\GitHub\thuc_hanh_lap_trinh_windows\DH52007101\DH52007101\DH52007101\Views\Hanghoa\Xoa.cshtml"
                                                                    Write(n.Tenhang);
@@ -169,7 +169,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 ");
                     EndContext();
                     BeginContext(1471, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "984f7ac72c114bfb9be0b6e5ac845043", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16972e85e1144b659e314fbba68a8e6f", async() => {
                         BeginContext(1493, 8, true);
                         WriteLiteral("Quay lại");
                         EndContext();

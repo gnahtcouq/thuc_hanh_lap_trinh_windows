@@ -96,48 +96,36 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <table class="table table-success table-striped" width="50%">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        @*<a href="@Url.Action("index","nhasanxuat")" class="text-white">Quản lý Nhà sản xuất</a>*@
-                                        <a asp-controller="nhasanxuat" asp-action="Index" class="text-white">Quản lý Nhà sản xuất</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        @*<a href="@Url.Action("index","nhanvien")" class="text-white">Quản lý Nhân viên</a>*@
-                                        <a asp-controller="nhanvien" asp-action="Index" class="text-white">Quản lý Nhân viên</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        @*<a href="@Url.Action("index","khachhang")" class="text-white">Quản lý Khách hàng</a>*@
-                                        <a asp-controller="khachhang" asp-action="Index" class="text-white">Quản lý Khách hàng</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        @*<a href="@Url.Action("index","loaihanghoa")" class="text-white">Quản lý Loại hàng hóa</a>*@
-                                        <a asp-controller="loaihanghoa" asp-action="Index" class="text-white">Quản lý Loại hàng hóa</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        @*<a href="@Url.Action("index","hanghoa")" class="text-white">Quản lý Hàng hóa</a>*@
-                                        <a asp-controller="hanghoa" asp-action="Index" class="text-white">Quản lý Hàng hóa</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="list-group">
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","nhasanxuat")" class="text-white">Quản lý Nhà sản xuất</a>*@
+                                <a asp-controller="nhasanxuat" asp-action="Index" class="text-white">Quản lý Nhà sản xuất</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","nhanvien")" class="text-white">Quản lý Nhân viên</a>*@
+                                <a asp-controller="nhanvien" asp-action="Index" class="text-white">Quản lý Nhân viên</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","khachhang")" class="text-white">Quản lý Khách hàng</a>*@
+                                <a asp-controller="khachhang" asp-action="Index" class="text-white">Quản lý Khách hàng</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","loaihanghoa")" class="text-white">Quản lý Loại hàng hóa</a>*@
+                                <a asp-controller="loaihanghoa" asp-action="Index" class="text-white">Quản lý Loại hàng hóa</a>
+                            </div>
+                            <div class="list-group-item bg-info ">
+                                @*<a href="@Url.Action("index","hanghoa")" class="text-white">Quản lý Hàng hóa</a>*@
+                                <a asp-controller="hanghoa" asp-action="Index" class="text-white">Quản lý Hàng hóa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 bg-light">
+                        @RenderBody()
                     </div>
                 </div>
-                <div class="col-md-9 bg-light">
-                    @RenderBody()
+                <div class="card-footer bg-secondary text-white">
+                    Footer
                 </div>
-            </div>
-            <div class="card-footer bg-secondary text-white">
-                Footer
             </div>
         </div>
     </div>
