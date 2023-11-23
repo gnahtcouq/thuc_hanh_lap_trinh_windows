@@ -12547,11 +12547,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\QuocThang\\Desktop\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11.csproj",
+      "projectUniqueName": "C:\\Users\\QuocThang\\Documents\\GitHub\\thuc_hanh_lap_trinh_windows\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11.csproj",
       "projectName": "TranVanQuocThang_DH52007101_D20_TH11",
-      "projectPath": "C:\\Users\\QuocThang\\Desktop\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11.csproj",
+      "projectPath": "C:\\Users\\QuocThang\\Documents\\GitHub\\thuc_hanh_lap_trinh_windows\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11.csproj",
       "packagesPath": "C:\\Users\\QuocThang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\QuocThang\\Desktop\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11\\obj\\",
+      "outputPath": "C:\\Users\\QuocThang\\Documents\\GitHub\\thuc_hanh_lap_trinh_windows\\TranVanQuocThang_DH52007101_D20_TH11\\TranVanQuocThang_DH52007101_D20_TH11\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
