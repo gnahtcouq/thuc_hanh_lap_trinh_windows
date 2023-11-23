@@ -11,9 +11,15 @@ namespace DH52007101.Controllers {
     public class HanghoaController : Controller {
         QLBHContext db = new QLBHContext();
         public IActionResult Index() {
+            var hanghoa = db.Hanghoa.Include(h => h.MaloaiNavigation).Include(h => h.MansxNavigation);
             ViewBag.hh = db.Hanghoa;
             return View();
         }
+
+        //public IActionResult chiTietHanghoa(string id) {
+        //    var a = db.Hanghoa.Include(h => h.MaloaiNavigation).Include(h => h.MansxNavigation).Where(n => n.Mahang == id).;
+        //    return View(a);
+        //}
 
         // Thêm
         [HttpGet]

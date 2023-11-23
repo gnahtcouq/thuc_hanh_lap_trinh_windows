@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.34112.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranVanQuocThang_DH52007101_D20_TH11", "TranVanQuocThang_DH52007101_D20_TH11\TranVanQuocThang_DH52007101_D20_TH11.csproj", "{B457776A-7834-42A5-B61C-70142B5EB7A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B457776A-7834-42A5-B61C-70142B5EB7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B457776A-7834-42A5-B61C-70142B5EB7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B457776A-7834-42A5-B61C-70142B5EB7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B457776A-7834-42A5-B61C-70142B5EB7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C70C13B-57CB-45BF-90D0-9B2D8AD61FCB}
+	EndGlobalSection
+EndGlobal

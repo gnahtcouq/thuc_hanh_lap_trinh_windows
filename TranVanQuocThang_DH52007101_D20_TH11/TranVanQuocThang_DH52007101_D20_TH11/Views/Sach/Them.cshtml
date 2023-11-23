@@ -1,0 +1,61 @@
+﻿@model TranVanQuocThang_DH52007101_D20_TH11.Models.Sach
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thêm sách</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="Them" method="post">
+            <h2>Thêm sách</h2>
+            <div class="form-group">
+                <label asp-for="MaSach" class="form-label"></label>
+                <input asp-for="MaSach" class="form-control" />
+                <span asp-validation-for="MaSach" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TenSach" class="form-label"></label>
+                <input asp-for="TenSach" class="form-control" />
+                <span asp-validation-for="TenSach" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NgayXb" class="form-label"></label>
+                <input asp-for="NgayXb" class="form-control" type="date" />
+                <span asp-validation-for="NgayXb" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gia" class="form-label"></label>
+                <input asp-for="Gia" class="form-control" />
+                <span asp-validation-for="Gia" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <label for="Maloai" class="form-label"><b>Mã loại</b></label>
+                <select asp-for="MaLoai" asp-items="ViewBag.ls" class="form-control"></select>
+            </div>
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Thêm</button><br /><br />
+            </div>
+
+            <div>
+                <a asp-action="Index">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
