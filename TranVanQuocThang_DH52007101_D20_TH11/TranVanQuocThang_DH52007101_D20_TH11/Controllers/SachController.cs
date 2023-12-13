@@ -22,6 +22,7 @@ namespace TranVanQuocThang_DH52007101_D20_TH11.Controllers {
         }
         [HttpPost]
         public ActionResult them(Sach n) {
+            ViewBag.ls = new SelectList(db.LoaiSach.ToList(), "MaLoai", "TenLoai");
             if (ModelState.IsValid) {
                 if (db.Sach.Find(n.MaSach) != null) {
                     ModelState.AddModelError("MaSach", "Mã sách này đã tồn tại không thêm được nữa!"); // cấp property
