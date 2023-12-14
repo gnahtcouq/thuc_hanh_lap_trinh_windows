@@ -22,7 +22,7 @@ namespace TranVanQuocThang_DH52007101_D20_TH11.Models {
         public DateTime? NgayXb { get; set; }
         [DisplayName("Giá")]
         [Required(ErrorMessage = "Giá không được để trống!")]
-        [Range(1, int.MaxValue, ErrorMessage = "Giá tiền không hợp lệ!")]
+        [Range(0, int.MaxValue, ErrorMessage = "Giá tiền không hợp lệ!")]
         public int? Gia { get; set; }
         [DisplayName("Mã loại sách")]
         [Required(ErrorMessage = "Mã loại sách không được để trống!")]

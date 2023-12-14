@@ -4,6 +4,11 @@
     Layout = null;
 }
 
+@{
+    QLSACHContext db = new QLSACHContext();
+    SelectList DSLS = new SelectList(db.LoaiSach.ToList(), "MaLoai", "MaLoai");
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -43,9 +48,16 @@
                 <span asp-validation-for="Gia" class="text-danger"></span><br />
             </div>
 
-            <div class="form-group">
-                <label for="Maloai" class="form-label"><b>Mã loại</b></label>
-                <select asp-for="MaLoai" asp-items="ViewBag.ls" class="form-control"></select>
+            <div>
+                <table>
+                    <tr>
+                        <th style="width:200px">Mã loại sách</th>
+                        <td rowspan="2" id="xemLS"></td>
+                    </tr>
+                    <tr>
+                        <td><select asp-items="@DSLS" asp-for="MaLoai" onchange="xemLoaiSach_change()" class="form-control"></select></td>
+                    </tr>
+                </table>
             </div>
 
             <div class="form-group mt-3">
@@ -57,5 +69,26 @@
             </div>
         </form>
     </div>
+    <script type="text/javascript">
+        function xemLoaiSach_change() {
+            const mals = document.getElementById("MaLoai").value;
+
+            // Create an XMLHttpRequest object
+            const xhttp = new XMLHttpRequest();
+
+            // Define a callback function
+            xhttp.onload = function () {
+                // Here you can use the Data
+                // Nhận giá trị trả về
+                document.getElementById("xemLS").innerHTML = xhttp.responseText;
+                console.log(xhttp.responseText);
+            }
+
+            // Send a request
+            const strUrl = "/Sach/xemLoaiSach/" + mals;
+            xhttp.open("GET", strUrl);
+            xhttp.send();
+        }
+    </script>
 </body>
 </html>
